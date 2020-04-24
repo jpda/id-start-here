@@ -16,6 +16,38 @@ mergeStyles({
   }
 });
 
+// const aadTheme: ICustomizations = {
+//   settings: {
+//     theme: createTheme({
+//       palette: {
+//         themePrimary: '#4fabee',
+//         themeLighterAlt: '#030709',
+//         themeLighter: '#0d1b26',
+//         themeLight: '#173347',
+//         themeTertiary: '#2f678e',
+//         themeSecondary: '#4596d1',
+//         themeDarkAlt: '#5fb3ef',
+//         themeDark: '#76bef1',
+//         themeDarker: '#99cff5',
+//         neutralLighterAlt: '#0b0b0b',
+//         neutralLighter: '#151515',
+//         neutralLight: '#252424',
+//         neutralQuaternaryAlt: '#2f2e2e',
+//         neutralQuaternary: '#373636',
+//         neutralTertiaryAlt: '#595858',
+//         neutralTertiary: '#c8c8c8',
+//         neutralSecondary: '#d0d0d0',
+//         neutralPrimaryAlt: '#dadada',
+//         neutralPrimary: '#ffffff',
+//         neutralDark: '#f4f4f4',
+//         black: '#f8f8f8',
+//         white: '#000000',
+//       }
+//     })
+//   },
+//   scopedSettings: {}
+// }
+
 ReactDOM.render(
   <Customizer {...FluentCustomizations}>
     <App />
