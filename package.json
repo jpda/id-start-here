@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/id-start-here",
+  "homepage": "https://jpda.dev/id-start-here",
   "dependencies": {
     "@types/jest": "24.0.12",
     "@types/node": "11.13.8",

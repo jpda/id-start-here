@@ -15,13 +15,13 @@ export const App: React.FunctionComponent = () => {
         <nav>
           <ul>
             <li>
-              <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="./">Home</RouterLink>
             </li>
             <li>
-              <RouterLink to="/box">box</RouterLink>
+              <RouterLink to="./box">box</RouterLink>
             </li>
             <li>
-              <RouterLink to="/select">select</RouterLink>
+              <RouterLink to="./select">select</RouterLink>
             </li>
           </ul>
         </nav>
