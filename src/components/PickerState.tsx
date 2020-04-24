@@ -4,4 +4,6 @@ export interface PickerState {
     lang: string;
     task: string;
     suggestion: string;
+    sentence: string;
+    ready: boolean;
 }

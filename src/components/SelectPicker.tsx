@@ -35,16 +35,16 @@ export default class SelectPicker extends Picker {
     render() {
         return (
             <Fabric>
-                <div>
-                    <h1>I am
-                   <Select options={this.verbOptions} />
-                    a
+                <div className="selectPicker" style={{ "width": "960px" }}>
+                    <h1>I am</h1>
+                    <Select options={this.verbOptions} style={{"font-size": "2em"}} />
+                    <h1>a</h1>
                     <Select options={this.platformOptions} />
-                    app using
+                    <h1>app using</h1>
                     <Select options={this.langOptions} />
-                    and I need to
+                    <h1>and I need to</h1>
                     <Select options={this.taskOptions} isMulti={true} />
-                    </h1>
+                    {/* </h1> */}
                 </div>
             </Fabric>
         )
