@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
 import { FluentCustomizations } from '@uifabric/fluent-theme';
-import { Customizer, mergeStyles } from 'office-ui-fabric-react';
+import { Customizer, mergeStyles, registerIcons, initializeIcons } from 'office-ui-fabric-react';
 import * as serviceWorker from './serviceWorker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // Inject some global styles
 mergeStyles({
@@ -13,6 +16,15 @@ mergeStyles({
       padding: 0,
       height: '100vh'
     }
+  }
+});
+
+library.add(faGithub, faYoutube);
+
+registerIcons({
+  icons: {
+    'github': <FontAwesomeIcon icon={faGithub} />,
+    'youtube': <FontAwesomeIcon icon={faYoutube} />,
   }
 });
 
@@ -47,6 +59,7 @@ mergeStyles({
 //   },
 //   scopedSettings: {}
 // }
+initializeIcons();
 
 ReactDOM.render(
   <Customizer {...FluentCustomizations}>
@@ -59,3 +72,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+

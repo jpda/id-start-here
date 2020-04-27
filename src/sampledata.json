@@ -1,0 +1,118 @@
+{
+    "metadata": {
+        "verbs": [
+            "build",
+            "deploy",
+            "run",
+            "migrate",
+            "integrate"
+        ],
+        "platforms": [
+            "web",
+            "desktop",
+            "mobile",
+            "daemon",
+            "games"
+        ],
+        "languages": [
+            "dotnet",
+            "python",
+            "node",
+            "java",
+            "powershell",
+            "spa"
+        ],
+        "tasks": [
+            "add-auth",
+            "connect-to-api",
+            "secure-api",
+            "connect-to-azure-resources",
+            "control-roles",
+            "secure-creds"
+        ],
+        "idps": [
+            "aad",
+            "aadb2c"
+        ],
+        "contentTypes": [
+            "docs",
+            "article",
+            "video",
+            "sample"
+        ],
+        "contentWeight": [
+            "official",
+            "mvp",
+            "community"
+        ]
+    },
+    "paths": {},
+    "content": [
+        {
+            "contentType": "docs",
+            "contentWeight": "official",
+            "description": "Quickstart: Add sign-in with Microsoft to an ASP.NET Core web app",
+            "path": "https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-core-webapp",
+            "tags": [
+                {
+                    "verbs": [
+                        "build"
+                    ],
+                    "platforms": [
+                        "web"
+                    ],
+                    "languages": [
+                        "dotnet"
+                    ],
+                    "tasks": [
+                        "add-auth"
+                    ]
+                }
+            ]
+        },
+        {
+            "contentType": "sample",
+            "contentWeight": "official",
+            "description": "An ASP.NET Core Web App which lets sign-in users (including in your org, many orgs, orgs + personal accounts, sovereign clouds) and call Web APIs (including Microsoft Graph)",
+            "path": "https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-1-MyOrg",
+            "tags": [
+                {
+                    "verbs": [
+                        "build"
+                    ],
+                    "platforms": [
+                        "web"
+                    ],
+                    "languages": [
+                        "dotnet"
+                    ],
+                    "tasks": [
+                        "add-auth"
+                    ]
+                }
+            ]
+        },
+        {
+            "contentType": "video",
+            "contentWeight": "official",
+            "description": "Microsoft Identity Developer Experience, Jun 28th 2018: Adding authentication using Azure AD to your web apps and web APIs.",
+            "path": "https://www.youtube.com/watch?v=T0wS5wyGQco",
+            "tags": [
+                {
+                    "verbs": [
+                        "build"
+                    ],
+                    "platforms": [
+                        "web"
+                    ],
+                    "languages": [
+                        "dotnet"
+                    ],
+                    "tasks": [
+                        "add-auth"
+                    ]
+                }
+            ]
+        }
+    ]
+}

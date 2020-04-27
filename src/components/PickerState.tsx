@@ -7,3 +7,26 @@ export interface PickerState {
     sentence: string;
     ready: boolean;
 }
+
+export interface PickerProps {
+
+}
+
+export interface LearningPath {
+    name: string;
+
+}
+
+
+export interface LearningCategory {
+    name: string;
+
+}
+
+export enum LearningPathStep { 
+    Build,
+    Deploy,
+    Run,
+    Migrate,
+    Integrate
+}

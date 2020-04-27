@@ -1,11 +1,10 @@
 import React from 'react';
 import { IChoiceGroupOption, initializeIcons } from 'office-ui-fabric-react';
-import { Props } from "./Props";
-import { PickerState } from "./PickerState";
+import { PickerState, PickerProps } from "./PickerState";
 
-export class Picker extends React.Component<Props, PickerState> {
+export class Picker extends React.Component<PickerProps, PickerState> {
     state: PickerState;
-    constructor(props: Props, state: PickerState) {
+    constructor(props: PickerProps, state: PickerState) {
         super(props, state);
         this.state = { verb: "", platform: "", lang: "", task: "", suggestion: "", sentence: "", ready: false };
         initializeIcons();
