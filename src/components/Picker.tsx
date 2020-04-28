@@ -117,7 +117,10 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             result += this.state.lang + " and I need to ";
         }
         if (this.state.task !== "") {
-            result += this.state.task;
+            result += this.state.task + " using ";
+        }
+        if(this.state.idp !== ""){
+            result += this.state.idp;
         }
         this.setState({ sentence: result });
     };
