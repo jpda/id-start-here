@@ -6,6 +6,7 @@ import { Customizer, mergeStyles, registerIcons, initializeIcons } from 'office-
 import * as serviceWorker from './serviceWorker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBox, faTerminal, faHammer } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // Inject some global styles
@@ -25,6 +26,10 @@ registerIcons({
   icons: {
     'github': <FontAwesomeIcon icon={faGithub} />,
     'youtube': <FontAwesomeIcon icon={faYoutube} />,
+    'container': <FontAwesomeIcon icon={faBox} />,
+    'bash': <FontAwesomeIcon icon={faTerminal} />,
+    'powershell': <FontAwesomeIcon icon={faTerminal} />,
+    'terraform': <FontAwesomeIcon icon={faHammer} />
   }
 });
 

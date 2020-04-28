@@ -57,9 +57,10 @@ export class MetadataService {
         return this._data.verbs;
     }
 
-    public GetTaggedItems(parent: string, tag: string): IMetadataItem[] {
+    public GetTaggedItems(parent: string, tags: string[]): IMetadataItem[] {
         var root: IMetadataItem[];
-        console.log(parent + ": " + tag);
+        console.log(parent + ": " + tags);
+
         switch (parent) {
             case "verb": {
                 console.log("in verb");
@@ -81,13 +82,27 @@ export class MetadataService {
                 root = this._data.verbs;
             }
         }
-
-        var things = root.map((x) => {
-            if (x !== undefined && x.tags && x.tags.includes(tag)) {
-                //console.log(x);
-                return x;
+        // there is absolutely a better way to do this
+        // eslint-disable-next-line
+        var ok = root.map(x => {
+            var all = false;
+            if (x.tags) {
+                for (var i = 0; i < tags.length; i++) {
+                    all = x.tags.includes(tags[i]);
+                    if (!all) break;
+                };
+                if (all) return x;
             }
-        }).filter(x => x !== undefined) as IMetadataItem[];
+        });
+
+        // var things = root.map(item => {
+        //     if (item.tags && tags && tags.every(tag => {
+        //         return tag !== undefined && item && item.tags && item.tags.includes(tag) > -1;
+        //     })) {
+        //         return item;
+        //     }
+        // })
+        var things = ok.filter(x => x !== undefined) as IMetadataItem[];
         console.log(things);
         return things;
     }

@@ -1,7 +1,7 @@
 import React from 'react';
-import { IChoiceGroupOption, initializeIcons, ChoiceGroupOption } from 'office-ui-fabric-react';
+import { IChoiceGroupOption, initializeIcons } from 'office-ui-fabric-react';
 import { PickerState, PickerProps } from "./PickerState";
-import { MetadataService, MetadataItem } from "../model/Data";
+import { MetadataService } from "../model/Data";
 
 export class Picker extends React.Component<PickerProps, PickerState> {
     private metadataService: MetadataService;
@@ -20,7 +20,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             sentence: "",
             ready: false,
             verbs: this.metadataService.GetRootItems(),
-            verbOptions: this.metadataService.GetRootItems().map((x, i) => {
+            verbOptions: this.metadataService.GetRootItems().map(x => {
                 return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
             })
         };
@@ -28,10 +28,11 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     }
     verbChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
+            var plat = this.metadataService.GetTaggedItems("verb", [option.key]);
             this.setState({ verb: option.key }, () => this.suggest());
-            this.setState({ platforms: this.metadataService.GetTaggedItems("verb", option.key) });
+            this.setState({ platforms: plat });
             this.setState({
-                platformOptions: this.metadataService.GetTaggedItems("verb", option.key).map((x, i) => {
+                platformOptions: plat.map(x => {
                     return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
                 })
             });
@@ -40,10 +41,11 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     };
     platformChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
+            var lang = this.metadataService.GetTaggedItems("platform", [this.state.verb, option.key]);
             this.setState({ platform: option.key }, () => this.suggest());
-            this.setState({ languages: this.metadataService.GetTaggedItems("platform", option.key) });
+            this.setState({ languages: lang });
             this.setState({
-                langOptions: this.metadataService.GetTaggedItems("platform", option.key).map((x, i) => {
+                langOptions: lang.map(x => {
                     return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
                 })
             });
@@ -52,10 +54,11 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     };
     langChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
+            var task = this.metadataService.GetTaggedItems("lang", [this.state.verb, this.state.platform, this.state.lang, option.key]);
             this.setState({ lang: option.key }, () => this.suggest());
-            this.setState({ tasks: this.metadataService.GetTaggedItems("lang", option.key) });
+            this.setState({ tasks: task });
             this.setState({
-                taskOptions: this.metadataService.GetTaggedItems("lang", option.key).map((x, i) => {
+                taskOptions: task.map(x => {
                     return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
                 })
             });

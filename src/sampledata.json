@@ -69,9 +69,9 @@
                 ]
             },
             {
-                "item": "azure-app-service",
-                "text": "Azure App Service",
-                "icon": "Azure",
+                "item": "azure-as",
+                "text": "App Service",
+                "icon": "AzureLogo",
                 "tags": [
                     "deploy"
                 ]
@@ -79,13 +79,13 @@
             {
                 "item": "azure-aks",
                 "text": "AKS",
-                "icon": "Azure",
+                "icon": "AzureLogo",
                 "tags": [
                     "deploy"
                 ]
             },
             {
-                "item": "docker",
+                "item": "container",
                 "text": "Container",
                 "icon": "container",
                 "tags": [
@@ -100,7 +100,11 @@
                 "icon": "CSharp",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "desktop",
+                    "mobile",
+                    "daemon",
+                    "gaming"
                 ]
             },
             {
@@ -109,7 +113,11 @@
                 "icon": "FileJAVA",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "desktop",
+                    "mobile",
+                    "daemon",
+                    "gaming"
                 ]
             },
             {
@@ -118,7 +126,11 @@
                 "icon": "JS",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "desktop",
+                    "mobile",
+                    "daemon",
+                    "gaming"
                 ]
             },
             {
@@ -127,7 +139,8 @@
                 "icon": "JS",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "mobile"
                 ]
             },
             {
@@ -137,7 +150,9 @@
                 "tags": [
                     "build",
                     "deploy",
-                    "web"
+                    "web",
+                    "container",
+                    "azure-aks"
                 ]
             },
             {
@@ -145,7 +160,12 @@
                 "text": "Powershell",
                 "icon": "Powershell",
                 "tags": [
-                    "deploy"
+                    "deploy",
+                    "web",
+                    "desktop",
+                    "daemon",
+                    "container",
+                    "azure-aks"
                 ]
             },
             {
@@ -153,7 +173,14 @@
                 "text": "Bash",
                 "icon": "Bash",
                 "tags": [
-                    "deploy"
+                    "deploy",
+                    "web",
+                    "desktop",
+                    "mobile",
+                    "daemon",
+                    "gaming",
+                    "container",
+                    "azure-aks"
                 ]
             },
             {
@@ -161,17 +188,30 @@
                 "text": "Terraform",
                 "icon": "Terraform",
                 "tags": [
-                    "deploy"
+                    "deploy",
+                    "web",
+                    "mobile",
+                    "daemon",
+                    "gaming",
+                    "container",
+                    "azure-aks"
                 ]
             },
             {
                 "item": "ARM",
                 "text": "Azure ARM",
-                "icon": "Azure",
+                "icon": "AzureLogo",
                 "tags": [
-                    "deploy"
+                    "deploy",
+                    "web",
+                    "daemon",
+                    "mobile",
+                    "container",
+                    "azure-aks",
+                    "azure-as"
                 ]
             }
+            
         ],
         "tasks": [
             {
@@ -180,6 +220,10 @@
                 "tags": [
                     "build",
                     "web",
+                    "desktop",
+                    "mobile",
+                    "daemon",
+                    "gaming",
                     "dotnet"
                 ],
                 "icon": "DeveloperTools"
@@ -188,7 +232,8 @@
                 "item": "connect-to-api",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "dotnet"
                 ],
                 "icon": "DeveloperTools"
             },
@@ -196,7 +241,8 @@
                 "item": "secure-api",
                 "tags": [
                     "build",
-                    "web"
+                    "web",
+                    "dotnet"
                 ],
                 "icon": "DeveloperTools"
             },
@@ -205,23 +251,48 @@
                 "tags": [
                     "build",
                     "run",
-                    "web"
+                    "web",
+                    "dotnet"
                 ],
                 "icon": "DeveloperTools"
             },
             {
                 "item": "secure-creds",
+                "text": "secure credentials",
                 "tags": [
                     "build",
                     "deploy",
-                    "run"
+                    "run",
+                    "dotnet",
+                    "node",
+                    "java",
+                    "azure-aks",
+                    "azure-as",
+                    "terraform",
+                    "container",
+                    "bash",
+                    "terraform",
+                    "pwsh",
+                    "ARM"
                 ],
-                "icon": "DeveloperTools"
+                "icon": "Lock"
             },
             {
                 "item": "github-actions",
+                "text": "use Github Actions",
                 "tags": [
-                    "deploy"
+                    "deploy",
+                    "dotnet",
+                    "node",
+                    "java",
+                    "azure-aks",
+                    "azure-as",
+                    "terraform",
+                    "container",
+                    "bash",
+                    "terraform",
+                    "pwsh",
+                    "ARM"
                 ],
                 "aliases": [
                     "create-service-principal"
@@ -236,22 +307,6 @@
                 "aliases": [
                     "create-service-principal",
                     "use-terraform"
-                ],
-                "icon": "DeveloperTools"
-            },
-            {
-                "item": "secure-creds",
-                "tags": [
-                    "build",
-                    "deploy"
-                ],
-                "icon": "DeveloperTools"
-            },
-            {
-                "item": "secure-creds",
-                "tags": [
-                    "build",
-                    "deploy"
                 ],
                 "icon": "DeveloperTools"
             }
