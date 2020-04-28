@@ -6,6 +6,7 @@ export interface PickerState {
     platform: string;
     lang: string;
     task: string;
+    idp: string;
     suggestion: string;
     sentence: string;
     ready: boolean;
@@ -17,6 +18,8 @@ export interface PickerState {
     langOptions?: IChoiceGroupOption[];
     tasks?: IMetadataItem[];
     taskOptions?: IChoiceGroupOption[];
+    idps?: IMetadataItem[];
+    idpOptions?: IChoiceGroupOption[];
     linkContent: IContentItem[];
     sampleContent: IContentItem[];
     mediaContent: IContentItem[];

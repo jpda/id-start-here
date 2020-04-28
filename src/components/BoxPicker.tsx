@@ -1,12 +1,11 @@
 import React from 'react';
-import { ChoiceGroup, Label, Stack, Text, FontWeights, IIconProps } from 'office-ui-fabric-react';
+import { ChoiceGroup, Label, Stack, Text, FontWeights } from 'office-ui-fabric-react';
 import { Picker } from './Picker';
 import { MediaContentItem, LinkContentItem } from '../model/Types';
 import { MotionAnimations } from '@uifabric/fluent-theme';
 
 export default class BoxPicker extends Picker {
     private boldStyle = { root: { fontWeight: FontWeights.semibold } };
-    private rocketIcon: IIconProps = { iconName: 'Rocket' };
 
     render() {
         return (
@@ -50,6 +49,16 @@ export default class BoxPicker extends Picker {
                                 </Stack>
                             </Label>
                             <ChoiceGroup options={this.state.taskOptions} onChange={this.taskChange} />
+                        </Stack>
+                        <Stack horizontalAlign="center">
+                            <Label>
+                                <Stack horizontal verticalAlign="center">
+                                    <Text variant="xxLarge" styles={this.boldStyle}>
+                                        using
+                            </Text>
+                                </Stack>
+                            </Label>
+                            <ChoiceGroup options={this.state.idpOptions} onChange={this.idpChange} />
                         </Stack>
                         <Stack horizontalAlign="center" gap={15} hidden={!this.state.ready}>
                             <Text variant="xxLarge" styles={this.boldStyle} block>{this.state.sentence}</Text>
