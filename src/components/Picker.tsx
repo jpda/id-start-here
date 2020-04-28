@@ -33,7 +33,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
         if (option) {
             var plat = this.metadataService.GetTaggedItems("verb", [option.key]);
             this.setState({
-                verb: option.key, platforms: plat, languages: [], tasks: [], langOptions:[], platformOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
+                verb: option.key, platforms: plat, languages: [], tasks: [], langOptions: [], platformOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
             }, () => this.suggest());
             this.setState({
                 platformOptions: plat.map(x => {
