@@ -1,3 +1,6 @@
+import { IMetadataItem } from '../model/Data';
+import { IChoiceGroupOption } from 'office-ui-fabric-react';
+
 export interface PickerState {
     verb: string;
     platform: string;
@@ -6,27 +9,16 @@ export interface PickerState {
     suggestion: string;
     sentence: string;
     ready: boolean;
+    verbs: IMetadataItem[];
+    verbOptions: IChoiceGroupOption[];
+    platforms?: IMetadataItem[];
+    platformOptions?: IChoiceGroupOption[];
+    languages?: IMetadataItem[];
+    langOptions?: IChoiceGroupOption[];
+    tasks?: IMetadataItem[];
+    taskOptions?: IChoiceGroupOption[];
 }
 
 export interface PickerProps {
 
-}
-
-export interface LearningPath {
-    name: string;
-
-}
-
-
-export interface LearningCategory {
-    name: string;
-
-}
-
-export enum LearningPathStep { 
-    Build,
-    Deploy,
-    Run,
-    Migrate,
-    Integrate
 }
