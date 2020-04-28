@@ -29,8 +29,9 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     verbChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             var plat = this.metadataService.GetTaggedItems("verb", [option.key]);
-            this.setState({ verb: option.key }, () => this.suggest());
-            this.setState({ platforms: plat });
+            this.setState({
+                verb: option.key, platforms: plat, languages: [], tasks: [], platformOptions: [], taskOptions: []
+            }, () => this.suggest());
             this.setState({
                 platformOptions: plat.map(x => {
                     return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
@@ -42,8 +43,9 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     platformChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             var lang = this.metadataService.GetTaggedItems("platform", [this.state.verb, option.key]);
-            this.setState({ platform: option.key }, () => this.suggest());
-            this.setState({ languages: lang });
+            this.setState({
+                platform: option.key, languages: lang, tasks: [], taskOptions: []
+            }, () => this.suggest());
             this.setState({
                 langOptions: lang.map(x => {
                     return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
@@ -92,10 +94,5 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             result += this.state.task;
         }
         this.setState({ sentence: result });
-
-        if (this.state.verb === "build" && this.state.lang === "dotnet" && this.state.platform === "web" && this.state.task === "add sign-in") {
-            this.setState({ suggestion: "https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-core-webapp" });
-            this.setState({ ready: true });
-        }
     };
 }
