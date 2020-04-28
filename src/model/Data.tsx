@@ -68,6 +68,7 @@ export class Metadata {
     public platforms: IMetadataItem[];
     public languages: IMetadataItem[];
     public tasks: IMetadataItem[];
+    public idps: IMetadataItem[];
     public contentItems: IContentItem[];
 
     constructor() {
@@ -85,6 +86,9 @@ export class Metadata {
         });
         this.contentItems = metadata.content.map(x => {
             return new ContentItem(x);
+        });
+        this.idps = metadata.metadata.idps.map(x => {
+            return new MetadataItem(x);
         });
     }
 }
@@ -120,6 +124,11 @@ export class MetadataService {
                 root = this._data.tasks;
                 break;
             }
+            case "task":{
+                console.log("in task");
+                root = this._data.idps;
+                break;
+            }
             default: {
                 console.log("in default");
                 root = this._data.verbs;
@@ -129,14 +138,18 @@ export class MetadataService {
         // eslint-disable-next-line
         var ok = root.map(x => {
             var all = false;
+            console.log(x);
             if (x.tags) {
+                console.log(x.tags);
                 for (var i = 0; i < tags.length; i++) {
+                    console.log(tags[i]);
                     all = x.tags.includes(tags[i]);
                     if (!all) break;
                 };
                 if (all) return x;
             }
         });
+        console.log(ok);
         var things = ok.filter(x => x !== undefined) as IMetadataItem[];
         return things;
     }

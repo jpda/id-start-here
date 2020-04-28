@@ -227,7 +227,9 @@
                     "gaming",
                     "dotnet",
                     "node",
-                    "java"
+                    "java",
+                    "aad",
+                    "b2c"
                 ],
                 "icon": "DeveloperTools"
             },
@@ -237,7 +239,9 @@
                 "tags": [
                     "build",
                     "web",
-                    "dotnet"
+                    "dotnet",
+                    "aad",
+                    "b2c"
                 ],
                 "icon": "AzureAPIManagement"
             },
@@ -247,7 +251,9 @@
                 "tags": [
                     "build",
                     "web",
-                    "dotnet"
+                    "dotnet",
+                    "aad",
+                    "b2c"
                 ],
                 "icon": "Lock"
             },
@@ -258,7 +264,8 @@
                     "build",
                     "run",
                     "web",
-                    "dotnet"
+                    "dotnet",
+                    "aad"
                 ],
                 "icon": "AzureLogo"
             },
@@ -324,8 +331,8 @@
                     "pwsh",
                     "move-from-adfs"
                 ],
-                "text":"leave ADFS",
-                "icon":"server"
+                "text": "leave ADFS",
+                "icon": "server"
             },
             {
                 "item": "move-from-okta",
@@ -335,13 +342,79 @@
                     "pwsh",
                     "move-from-adfs"
                 ],
-                "text":"leave Okta",
-                "icon":"CloudDownload"
+                "text": "leave Okta",
+                "icon": "CloudDownload"
             }
         ],
         "idps": [
-            "aad",
-            "aadb2c"
+            {
+                "item": "aad",
+                "tags": [
+                    "build",
+                    "web",
+                    "desktop",
+                    "daemon",
+                    "mobile",
+                    "gaming",
+                    "deploy",
+                    "run",
+                    "migrate",
+                    "dotnet",
+                    "node",
+                    "java",
+                    "azure-aks",
+                    "azure-as",
+                    "terraform",
+                    "container",
+                    "bash",
+                    "terraform",
+                    "pwsh",
+                    "ARM",
+                    "add-auth",
+                    "secure-creds"
+                ],
+                "text": "Azure AD",
+                "icon": "AADLogo"
+            },
+            {
+                "item": "b2c",
+                "tags": [
+                    "build",
+                    "web",
+                    "desktop",
+                    "daemon",
+                    "mobile",
+                    "gaming",
+                    "deploy",
+                    "run",
+                    "migrate",
+                    "dotnet",
+                    "node",
+                    "java",
+                    "azure-aks",
+                    "azure-as",
+                    "terraform",
+                    "container",
+                    "bash",
+                    "terraform",
+                    "pwsh",
+                    "ARM",
+                    "add-auth",
+                    "secure-creds",
+                    "deploy",
+                    "container",
+                    "bash",
+                    "ARM",
+                    "secure-creds",
+                    "migrate",
+                    "web",
+                    "pwsh",
+                    "move-from-adfs",
+                    "move-from-okta"
+                ],
+                "text": "Azure AD B2C",
+                "icon": "AADLogo"
+            }
         ],
         "contentTypes": [
             "docs",
@@ -364,7 +437,9 @@
                 "DeveloperTools",
                 "Globe",
                 "CSharp",
-                "Signin"
+                "Signin",
+                "aad",
+                "b2c"
             ],
             "lastUpdated": "2020-04-22",
             "subTitle": "In this quickstart, you use a code sample to learn how an ASP.NET Core web app can sign in personal accounts (hotmail.com, outlook.com, others) and work and school accounts from any Azure Active Directory (Azure AD) instance.",
@@ -375,7 +450,9 @@
                 "build",
                 "web",
                 "dotnet",
-                "add-auth"
+                "add-auth",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -385,7 +462,9 @@
                 "DeveloperTools",
                 "Globe",
                 "CSharp",
-                "Signin"
+                "Signin",
+                "aad",
+                "b2c"
             ],
             "lastUpdated": "2020-03-03",
             "subTitle": "In this quickstart, you register an application using the App registrations experience in the Azure portal.",
@@ -396,7 +475,9 @@
                 "build",
                 "web",
                 "dotnet",
-                "add-auth"
+                "add-auth",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -414,7 +495,9 @@
                 "build",
                 "web",
                 "dotnet",
-                "add-auth"
+                "add-auth",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -429,7 +512,9 @@
                 "build",
                 "web",
                 "dotnet",
-                "add-auth"
+                "add-auth",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -450,7 +535,9 @@
                 "container",
                 "bash",
                 "ARM",
-                "secure-creds"
+                "secure-creds",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -471,7 +558,9 @@
                 "container",
                 "bash",
                 "ARM",
-                "secure-creds"
+                "secure-creds",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -490,7 +579,9 @@
                 "container",
                 "bash",
                 "ARM",
-                "secure-creds"
+                "secure-creds",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -506,7 +597,9 @@
                 "container",
                 "bash",
                 "ARM",
-                "secure-creds"
+                "secure-creds",
+                "aad",
+                "b2c"
             ]
         },
         {
@@ -517,7 +610,8 @@
                 "web",
                 "pwsh",
                 "move-from-adfs",
-                "move-from-okta"
+                "move-from-okta",
+                "aad"
             ],
             "lastUpdated": "2020-04-01",
             "subTitle": "To increase application security, your goal is to have a single set of access controls and policies across your on-premises and cloud environments.",
@@ -529,7 +623,8 @@
                 "web",
                 "pwsh",
                 "move-from-adfs",
-                "move-from-okta"
+                "move-from-okta",
+                "aad"
             ]
         },
         {
@@ -540,7 +635,8 @@
                 "web",
                 "pwsh",
                 "move-from-adfs",
-                "move-from-okta"
+                "move-from-okta",
+                "aad"
             ],
             "lastUpdated": "2020-01-19",
             "subTitle": "The AD FS application activity report (preview) in the Azure portal lets you quickly identify which of your applications are capable of being migrated to Azure AD.",

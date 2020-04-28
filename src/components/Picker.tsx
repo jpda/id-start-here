@@ -16,6 +16,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             platform: "",
             lang: "",
             task: "",
+            idp: "",
             suggestion: "",
             sentence: "",
             ready: false,
@@ -33,7 +34,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
         if (option) {
             var plat = this.metadataService.GetTaggedItems("verb", [option.key]);
             this.setState({
-                verb: option.key, platforms: plat, languages: [], tasks: [], langOptions: [], platformOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
+                verb: option.key, platforms: plat, languages: [], tasks: [], idps: [], langOptions: [], platformOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: [], idpOptions: []
             }, () => this.suggest());
             this.setState({
                 platformOptions: plat.map(x => {
@@ -47,7 +48,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
         if (option) {
             var lang = this.metadataService.GetTaggedItems("platform", [this.state.verb, option.key]);
             this.setState({
-                platform: option.key, languages: lang, tasks: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
+                platform: option.key, languages: lang, tasks: [], idps: [], idpOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
             }, () => this.suggest());
             this.setState({
                 langOptions: lang.map(x => {
@@ -72,11 +73,28 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     };
     taskChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
+            var idps = this.metadataService.GetTaggedItems("task", [this.state.verb, this.state.platform, this.state.lang, option.key]);
             this.setState({ task: option.key }, () => this.suggest());
             this.setState({
-                linkContent: this.metadataService.GetTaggedContent("link", [this.state.verb, this.state.platform, this.state.lang, option.key]),
-                sampleContent: this.metadataService.GetTaggedContent("sample", [this.state.verb, this.state.platform, this.state.lang, option.key]),
-                mediaContent: this.metadataService.GetTaggedContent("media", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+                idpOptions: idps.map(x => {
+                    return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
+                })
+            });
+            // this.setState({
+            //     linkContent: this.metadataService.GetTaggedContent("link", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+            //     sampleContent: this.metadataService.GetTaggedContent("sample", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+            //     mediaContent: this.metadataService.GetTaggedContent("media", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+            // });
+        }
+    };
+
+    idpChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
+        if (option) {
+            this.setState({ idp: option.key }, () => this.suggest());
+            this.setState({
+                linkContent: this.metadataService.GetTaggedContent("link", [this.state.verb, this.state.platform, this.state.lang, this.state.task, option.key]),
+                sampleContent: this.metadataService.GetTaggedContent("sample", [this.state.verb, this.state.platform, this.state.lang, this.state.task, option.key]),
+                mediaContent: this.metadataService.GetTaggedContent("media", [this.state.verb, this.state.platform, this.state.lang, this.state.task, option.key]),
             });
         }
     };
