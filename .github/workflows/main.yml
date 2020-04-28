@@ -2,10 +2,8 @@ name: react-build-deploy
 on:
   push:
     branches: [ master ]
-    paths-ignore: './src/func/**'
 env:
   AZURE_STORAGEACCOUNT_NAME: msiddev
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: './src/func'
   AZURE_STORAGEACCOUNT_CONTAINER: '$web'
 jobs:
   build:
