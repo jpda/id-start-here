@@ -32,7 +32,6 @@
   "scripts": {
     "start": "react-scripts start",
     "deploy-pages": "rm -rf ./docs && mkdir ./docs && cp -rf ./build/* ./docs/",
-    "deploy-cdn": "az storage",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

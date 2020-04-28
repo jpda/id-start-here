@@ -4,6 +4,21 @@ object-assign
 @license MIT
 */
 
+/*!
+ * Application Insights JavaScript SDK - Dependencies Plugin, 2.5.4
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * Application Insights JavaScript SDK - Web Analytics, 2.5.4
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
+/*!
+ * Application Insights JavaScript SDK - Web, 2.5.4
+ * Copyright (c) Microsoft and contributors. All rights reserved.
+ */
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
