@@ -17,7 +17,7 @@
                 "icon": "Play"
             },
             {
-                "item": "mod",
+                "item": "migrate",
                 "text": "modernizing",
                 "icon": "Refresh"
             },
@@ -33,7 +33,8 @@
                 "text": "web",
                 "icon": "Globe",
                 "tags": [
-                    "build"
+                    "build",
+                    "migrate"
                 ]
             },
             {
@@ -165,7 +166,8 @@
                     "desktop",
                     "daemon",
                     "container",
-                    "azure-aks"
+                    "azure-aks",
+                    "migrate"
                 ]
             },
             {
@@ -313,6 +315,28 @@
                     "use-terraform"
                 ],
                 "icon": "DeveloperTools"
+            },
+            {
+                "item": "move-from-adfs",
+                "tags": [
+                    "migrate",
+                    "web",
+                    "pwsh",
+                    "move-from-adfs"
+                ],
+                "text":"leave ADFS",
+                "icon":"server"
+            },
+            {
+                "item": "move-from-okta",
+                "tags": [
+                    "migrate",
+                    "web",
+                    "pwsh",
+                    "move-from-adfs"
+                ],
+                "text":"leave Okta",
+                "icon":"CloudDownload"
             }
         ],
         "idps": [
@@ -483,6 +507,110 @@
                 "bash",
                 "ARM",
                 "secure-creds"
+            ]
+        },
+        {
+            "href": "https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/migrate-adfs-apps-to-azure",
+            "title": "Moving application authentication from Active Directory Federation Services to Azure Active Directory",
+            "logoIconNames": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ],
+            "lastUpdated": "2020-04-01",
+            "subTitle": "To increase application security, your goal is to have a single set of access controls and policies across your on-premises and cloud environments.",
+            "contentType": "link",
+            "contentSource": "docs",
+            "contentWeight": "official",
+            "tags": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ]
+        },
+        {
+            "href": "https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/migrate-adfs-application-activity",
+            "title": "Use the AD FS application activity report (preview) to migrate applications to Azure AD",
+            "logoIconNames": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ],
+            "lastUpdated": "2020-01-19",
+            "subTitle": "The AD FS application activity report (preview) in the Azure portal lets you quickly identify which of your applications are capable of being migrated to Azure AD.",
+            "contentType": "link",
+            "contentSource": "docs",
+            "contentWeight": "official",
+            "tags": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ]
+        },
+        {
+            "href": "https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-health-adfs",
+            "title": "Setup Azure AD Connect Health for ADFS",
+            "logoIconNames": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ],
+            "lastUpdated": "2020-01-19",
+            "subTitle": "The following documentation is specific to monitoring your AD FS infrastructure with Azure AD Connect Health.",
+            "contentType": "link",
+            "contentSource": "docs",
+            "contentWeight": "official",
+            "tags": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ]
+        },
+        {
+            "href": "https://github.com/AzureAD/Deployment-Plans/tree/master/ADFS%20to%20AzureAD%20App%20Migration",
+            "title": "ADFS to AzureAD App Migration",
+            "logoIconNames": [
+                "Github"
+            ],
+            "lastUpdated": "2019-04-24",
+            "subTitle": "PRogrammatically collect, analyze & report on ADFS applications before migration.",
+            "contentType": "sample",
+            "contentSource": "github",
+            "contentWeight": "official",
+            "tags": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
+            ]
+        },
+        {
+            "href": "https://www.youtube.com/watch?v=CjcrFAkcYLU",
+            "title": "Moving legacy authentication to the cloud | Azure Active Directory",
+            "lastUpdated": "2019-12-19",
+            "previewImageHref": "https://i3.ytimg.com/vi/CjcrFAkcYLU/hqdefault.jpg",
+            "contentType": "media",
+            "contentSource": "youtube",
+            "contentWeight": "official",
+            "tags": [
+                "migrate",
+                "web",
+                "pwsh",
+                "move-from-adfs",
+                "move-from-okta"
             ]
         }
     ]
