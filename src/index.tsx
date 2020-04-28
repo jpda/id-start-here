@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './App';
 import { FluentCustomizations } from '@uifabric/fluent-theme';
 import { Customizer, mergeStyles, registerIcons, initializeIcons } from 'office-ui-fabric-react';
 import * as serviceWorker from './serviceWorker';
@@ -8,14 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBox, faTerminal, faHammer } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { ApplicationInsights } from '@microsoft/applicationinsights-web'
 
-const appInsights = new ApplicationInsights({ config: {
-  connectionString: "4a76c8eb-e0eb-41c7-a7e8-757238482364"
-  
-} });
-appInsights.loadAppInsights();
-appInsights.trackPageView();
+import App from './App';
+
+
 
 // Inject some global styles
 mergeStyles({

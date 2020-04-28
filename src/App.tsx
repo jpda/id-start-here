@@ -5,67 +5,88 @@ import { ReactComponent as Logo } from './img/aad.svg'
 import { HashRouter as Router, Switch, Route, Link as RouterLink } from 'react-router-dom';
 import SelectPicker from './components/SelectPicker';
 import BoxPicker from './components/BoxPicker';
+import { withAITracking, ReactPlugin } from "@microsoft/applicationinsights-react-js";
+import { ApplicationInsights } from "@microsoft/applicationinsights-web";
+import { createBrowserHistory } from "history";
 
 const boldStyle = { root: { fontWeight: FontWeights.semibold } };
+const browserHistory = createBrowserHistory({ basename: '' });
+var reactPlugin = new ReactPlugin();
+const appInsights = new ApplicationInsights({
+  config: {
+    instrumentationKey: "4a76c8eb-e0eb-41c7-a7e8-757238482364",
+    enableAutoRouteTracking: true,
+    extensions: [reactPlugin],
+    extensionConfig: {
+      [reactPlugin.identifier]: { history: browserHistory }
+    }
+  }
+});
+appInsights.loadAppInsights();
+appInsights.trackPageView();
 
-export const App: React.FunctionComponent = () => {
-  return (
-    <Fabric>
-      <Router>
-        <div className="ms-Grid" dir="ltr">
-          {/* nav row */}
-          <div className="ms-Grid-row ms-depth-8">
-            <div className="ms-Grid-col ms-lg2 ms-depth-8"></div>
-            <div className="ms-Grid-col ms-sm2 ms-lg1" style={{ padding: "1em" }}>
-              <Stack horizontal horizontalAlign="center" gap={15}>
-                <Logo className="logo" height={45} width={45} />
-                <Text variant="xxLarge" styles={boldStyle}>Identity</Text>
-              </Stack>
-            </div>
-            <div className="ms-Grid-col ms-sm10 ms-lg6">
-              <nav className="topNav">
-                <ul>
-                  <li>
-                    <RouterLink to="./">Home</RouterLink>
-                  </li>
-                  <li>
-                    <RouterLink to="./box">Box</RouterLink>
-                  </li>
-                  <li>
-                    <RouterLink to="./select">Select</RouterLink>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div className="ms-Grid-col ms-lg2"></div>
-          </div>
-          {/* main grid */}
-          <div className="ms-Grid-row" dir="ltr">
-            <div className="ms-Grid-col ms-lg2"></div>
-            {/* main content container */}
-            <div className="ms-Grid-col ms-sm12 ms-lg8">
-              <div className="ms-Grid">
-                <Switch>
-                  <Route path="/box">
-                    <BoxPicker />
-                  </Route>
-                  <Route path="/select">
-                    <SelectPicker />
-                  </Route>
-                  <Route path="/">
-                    <Home />
-                  </Route>
-                </Switch>
+class App extends React.Component {
+  render() {
+    return (
+      <Fabric>
+        <Router>
+          <div className="ms-Grid" dir="ltr">
+            {/* nav row */}
+            <div className="ms-Grid-row ms-depth-8">
+              <div className="ms-Grid-col ms-lg2 ms-depth-8"></div>
+              <div className="ms-Grid-col ms-sm2 ms-lg1" style={{ padding: "1em" }}>
+                <Stack horizontal horizontalAlign="center" gap={15}>
+                  <Logo className="logo" height={45} width={45} />
+                  <Text variant="xxLarge" styles={boldStyle}>Identity</Text>
+                </Stack>
               </div>
+              <div className="ms-Grid-col ms-sm10 ms-lg6">
+                <nav className="topNav">
+                  <ul>
+                    <li>
+                      <RouterLink to="./">Home</RouterLink>
+                    </li>
+                    <li>
+                      <RouterLink to="./box">Box</RouterLink>
+                    </li>
+                    <li>
+                      <RouterLink to="./select">Select</RouterLink>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div className="ms-Grid-col ms-lg2"></div>
             </div>
-            <div className="ms-Grid-col ms-lg2"></div>
+            {/* main grid */}
+            <div className="ms-Grid-row" dir="ltr">
+              <div className="ms-Grid-col ms-lg2"></div>
+              {/* main content container */}
+              <div className="ms-Grid-col ms-sm12 ms-lg8">
+                <div className="ms-Grid">
+                  <Switch>
+                    <Route path="/box">
+                      <BoxPicker />
+                    </Route>
+                    <Route path="/select">
+                      <SelectPicker />
+                    </Route>
+                    <Route path="/">
+                      <Home />
+                    </Route>
+                  </Switch>
+                </div>
+              </div>
+              <div className="ms-Grid-col ms-lg2"></div>
+            </div>
+            {/* <Footer /> */}
           </div>
-          {/* <Footer /> */}
-        </div>
-      </Router >
-    </Fabric >
-  );
-};
+        </Router >
+      </Fabric >
+    );
+  };
+}
+
+export default withAITracking(reactPlugin, App);
 
 export function Jumbo() {
   return <Stack horizontalAlign="center" verticalFill styles={{
