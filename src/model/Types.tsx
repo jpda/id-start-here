@@ -3,7 +3,7 @@ import { Stack, DocumentCardLogo, DocumentCard, DocumentCardTitle, DocumentCardA
 import { formatRelative } from 'date-fns'
 import { Depths } from '@uifabric/fluent-theme';
 
-interface IContentProps {
+export interface IContentProps {
     href: string;
     title: string;
     logoIconNames?: string[];
@@ -12,14 +12,11 @@ interface IContentProps {
     people?: IDocumentCardActivityPerson[];
 }
 
-interface IMediaContentProps extends IContentProps {
+export interface IMediaContentProps extends IContentProps {
     previewImageHref: string;
 }
 
-interface IContentState {
-    state: string;
-    other: string;
-}
+export interface IContentState { }
 
 export class ContentItem<IContentProps, IContentState> extends React.Component<IContentProps, IContentState> {
     protected conversationTileClass = mergeStyles({ height: 182 });
@@ -29,6 +26,7 @@ export class ContentItem<IContentProps, IContentState> extends React.Component<I
     protected people: IDocumentCardActivityPerson[] = [{ name: 'ID devrel', profileImageSrc: '' }];
     protected icons: string[] = ["web"];
     protected lastUpdatedDate: number = Date.now();
+    public tags: string[] = [];
 
     protected logoProps: IDocumentCardLogoProps = {
         logoIcon: 'Globe',
