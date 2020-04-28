@@ -1,29 +1,64 @@
 import React from 'react';
-import { IChoiceGroupOption, initializeIcons } from 'office-ui-fabric-react';
+import { IChoiceGroupOption, initializeIcons, ChoiceGroupOption } from 'office-ui-fabric-react';
 import { PickerState, PickerProps } from "./PickerState";
+import { MetadataService, MetadataItem } from "../model/Data";
 
 export class Picker extends React.Component<PickerProps, PickerState> {
+    private metadataService: MetadataService;
+
     state: PickerState;
     constructor(props: PickerProps, state: PickerState) {
         super(props, state);
-        this.state = { verb: "", platform: "", lang: "", task: "", suggestion: "", sentence: "", ready: false };
+
+        this.metadataService = new MetadataService();
+        this.state = {
+            verb: "",
+            platform: "",
+            lang: "",
+            task: "",
+            suggestion: "",
+            sentence: "",
+            ready: false,
+            verbs: this.metadataService.GetRootItems(),
+            verbOptions: this.metadataService.GetRootItems().map((x, i) => {
+                return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
+            })
+        };
         initializeIcons();
     }
     verbChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             this.setState({ verb: option.key }, () => this.suggest());
+            this.setState({ platforms: this.metadataService.GetTaggedItems("verb", option.key) });
+            this.setState({
+                platformOptions: this.metadataService.GetTaggedItems("verb", option.key).map((x, i) => {
+                    return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
+                })
+            });
         }
         this.suggest();
     };
     platformChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             this.setState({ platform: option.key }, () => this.suggest());
+            this.setState({ languages: this.metadataService.GetTaggedItems("platform", option.key) });
+            this.setState({
+                langOptions: this.metadataService.GetTaggedItems("platform", option.key).map((x, i) => {
+                    return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
+                })
+            });
         }
         this.suggest();
     };
     langChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             this.setState({ lang: option.key }, () => this.suggest());
+            this.setState({ tasks: this.metadataService.GetTaggedItems("lang", option.key) });
+            this.setState({
+                taskOptions: this.metadataService.GetTaggedItems("lang", option.key).map((x, i) => {
+                    return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
+                })
+            });
         }
         this.suggest();
     };
@@ -32,6 +67,13 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             this.setState({ task: option.key }, () => this.suggest());
         }
     };
+
+    itemChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
+        if (option) {
+            this.setState({ task: option.key }, () => this.suggest());
+        }
+    };
+
     suggest = () => {
         var result = "I am ";
         if (this.state.verb !== "") {

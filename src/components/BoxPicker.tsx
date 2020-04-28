@@ -6,14 +6,6 @@ import { MediaContentItem, LinkContentItem } from '../model/Types';
 export default class BoxPicker extends Picker {
     private boldStyle = { root: { fontWeight: FontWeights.semibold } };
 
-    private verbOptions: IChoiceGroupOption[] = [
-        { key: 'build', text: 'building', iconProps: { iconName: 'DeveloperTools' } },
-        { key: 'deploy', text: 'deploying', iconProps: { iconName: 'CloudUpload' } },
-        { key: 'run', text: 'running', iconProps: { iconName: 'Play' } },
-        { key: 'moderniz', text: 'modernizing', iconProps: { iconName: 'Refresh' } },
-        { key: 'integrat', text: 'integrating', iconProps: { iconName: 'TransitionPush' } },
-    ];
-
     private platformOptions: IChoiceGroupOption[] = [
         { key: 'web', text: 'web', iconProps: { iconName: 'Globe' } },
         { key: 'desktop', text: 'desktop', iconProps: { iconName: 'Devices2' } },
@@ -53,17 +45,15 @@ export default class BoxPicker extends Picker {
                             </Text>
                                 </Stack>
                             </Label>
-                            <ChoiceGroup options={this.verbOptions} onChange={this.verbChange} />
+                            <ChoiceGroup options={this.state.verbOptions} onChange={this.verbChange} />
                         </Stack>
                         <Stack horizontalAlign="center">
                             <Label>
                                 <Stack horizontal verticalAlign="center">
-                                    <Text variant="xxLarge" styles={this.boldStyle}>
-                                        a
-                            </Text>
+                                    <Text variant="xxLarge" styles={this.boldStyle}>a</Text>
                                 </Stack>
                             </Label>
-                            <ChoiceGroup options={this.platformOptions} onChange={this.platformChange} ></ChoiceGroup>
+                            <ChoiceGroup options={this.state.platformOptions} onChange={this.platformChange} ></ChoiceGroup>
                         </Stack>
                         <Stack horizontalAlign="center">
                             <Label>
@@ -73,7 +63,7 @@ export default class BoxPicker extends Picker {
                             </Text>
                                 </Stack>
                             </Label>
-                            <ChoiceGroup options={this.langOptions} onChange={this.langChange} ></ChoiceGroup>
+                            <ChoiceGroup options={this.state.langOptions} onChange={this.langChange} ></ChoiceGroup>
                         </Stack>
                         <Stack horizontalAlign="center">
                             <Label>
@@ -83,8 +73,7 @@ export default class BoxPicker extends Picker {
                             </Text>
                                 </Stack>
                             </Label>
-
-                            <ChoiceGroup options={this.taskOptions} onChange={this.taskChange} ></ChoiceGroup>
+                            <ChoiceGroup options={this.state.taskOptions} onChange={this.taskChange} ></ChoiceGroup>
                         </Stack>
                         <Stack horizontalAlign="center" gap={15} hidden={!this.state.ready}>
                             <Text variant="xxLarge" styles={this.boldStyle} block>{this.state.sentence}</Text>

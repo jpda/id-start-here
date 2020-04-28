@@ -1,34 +1,260 @@
 {
     "metadata": {
         "verbs": [
-            "build",
-            "deploy",
-            "run",
-            "migrate",
-            "integrate"
+            {
+                "item": "build",
+                "text": "building",
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "deploy",
+                "text": "deploying",
+                "icon": "CloudUpload"
+            },
+            {
+                "item": "run",
+                "text": "running",
+                "icon": "Play"
+            },
+            {
+                "item": "mod",
+                "text": "modernizing",
+                "icon": "Refresh"
+            },
+            {
+                "item": "integrate",
+                "text": "integrating",
+                "icon": "TransitionPush"
+            }
         ],
         "platforms": [
-            "web",
-            "desktop",
-            "mobile",
-            "daemon",
-            "games"
+            {
+                "item": "web",
+                "text": "web",
+                "icon": "Globe",
+                "tags": [
+                    "build"
+                ]
+            },
+            {
+                "item": "desktop",
+                "text": "desktop",
+                "icon": "Devices2",
+                "tags": [
+                    "build"
+                ]
+            },
+            {
+                "item": "mobile",
+                "text": "mobile",
+                "icon": "CellPhone",
+                "tags": [
+                    "build"
+                ]
+            },
+            {
+                "item": "daemon",
+                "text": "daemon",
+                "icon": "Server",
+                "tags": [
+                    "build"
+                ]
+            },
+            {
+                "item": "gaming",
+                "text": "gaming",
+                "icon": "Game",
+                "tags": [
+                    "build"
+                ]
+            },
+            {
+                "item": "azure-app-service",
+                "text": "Azure App Service",
+                "icon": "Azure",
+                "tags": [
+                    "deploy"
+                ]
+            },
+            {
+                "item": "azure-aks",
+                "text": "AKS",
+                "icon": "Azure",
+                "tags": [
+                    "deploy"
+                ]
+            },
+            {
+                "item": "docker",
+                "text": "Container",
+                "icon": "container",
+                "tags": [
+                    "deploy"
+                ]
+            }
         ],
         "languages": [
-            "dotnet",
-            "python",
-            "node",
-            "java",
-            "powershell",
-            "spa"
+            {
+                "item": "dotnet",
+                "text": "dotnet",
+                "icon": "CSharp",
+                "tags": [
+                    "build",
+                    "web"
+                ]
+            },
+            {
+                "item": "java",
+                "text": "Java",
+                "icon": "FileJAVA",
+                "tags": [
+                    "build",
+                    "web"
+                ]
+            },
+            {
+                "item": "node",
+                "text": "node",
+                "icon": "JS",
+                "tags": [
+                    "build",
+                    "web"
+                ]
+            },
+            {
+                "item": "angular",
+                "text": "angular",
+                "icon": "JS",
+                "tags": [
+                    "build",
+                    "web"
+                ]
+            },
+            {
+                "item": "python",
+                "text": "python",
+                "icon": "PY",
+                "tags": [
+                    "build",
+                    "deploy",
+                    "web"
+                ]
+            },
+            {
+                "item": "pwsh",
+                "text": "Powershell",
+                "icon": "Powershell",
+                "tags": [
+                    "deploy"
+                ]
+            },
+            {
+                "item": "bash",
+                "text": "Bash",
+                "icon": "Bash",
+                "tags": [
+                    "deploy"
+                ]
+            },
+            {
+                "item": "terraform",
+                "text": "Terraform",
+                "icon": "Terraform",
+                "tags": [
+                    "deploy"
+                ]
+            },
+            {
+                "item": "ARM",
+                "text": "Azure ARM",
+                "icon": "Azure",
+                "tags": [
+                    "deploy"
+                ]
+            }
         ],
         "tasks": [
-            "add-auth",
-            "connect-to-api",
-            "secure-api",
-            "connect-to-azure-resources",
-            "control-roles",
-            "secure-creds"
+            {
+                "item": "add-auth",
+                "text": "sign-in users",
+                "tags": [
+                    "build",
+                    "web",
+                    "dotnet"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "connect-to-api",
+                "tags": [
+                    "build",
+                    "web"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "secure-api",
+                "tags": [
+                    "build",
+                    "web"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "connect-to-azure-resources",
+                "tags": [
+                    "build",
+                    "run",
+                    "web"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "secure-creds",
+                "tags": [
+                    "build",
+                    "deploy",
+                    "run"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "github-actions",
+                "tags": [
+                    "deploy"
+                ],
+                "aliases": [
+                    "create-service-principal"
+                ],
+                "icon": "github"
+            },
+            {
+                "item": "use-a-tool",
+                "tags": [
+                    "deploy"
+                ],
+                "aliases": [
+                    "create-service-principal",
+                    "use-terraform"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "secure-creds",
+                "tags": [
+                    "build",
+                    "deploy"
+                ],
+                "icon": "DeveloperTools"
+            },
+            {
+                "item": "secure-creds",
+                "tags": [
+                    "build",
+                    "deploy"
+                ],
+                "icon": "DeveloperTools"
+            }
         ],
         "idps": [
             "aad",

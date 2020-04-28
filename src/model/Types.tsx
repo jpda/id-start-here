@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, DocumentCardLogo, DocumentCard, DocumentCardTitle, DocumentCardActivity, mergeStyles, IIconProps, IDocumentCardLogoProps, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardPreviewProps, ImageFit, DocumentCardPreview } from 'office-ui-fabric-react';
 import { formatRelative } from 'date-fns'
+import { Depths } from '@uifabric/fluent-theme';
 
 interface IContentProps {
     href: string;
@@ -62,6 +63,7 @@ export class LinkContentItem extends ContentItem<IContentProps, IContentState> {
                 aria-label={this.props.title}
                 styles={this.cardStyles}
                 onClickHref={this.props.href}
+                style={{ boxShadow: Depths.depth8 }}
             >
                 <Stack horizontal>
                     {
