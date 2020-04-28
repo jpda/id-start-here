@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, DocumentCardLogo, DocumentCard, DocumentCardTitle, DocumentCardActivity, mergeStyles, IIconProps, IDocumentCardLogoProps, IDocumentCardStyles, IDocumentCardActivityPerson, IDocumentCardPreviewProps, ImageFit, DocumentCardPreview } from 'office-ui-fabric-react';
-import { formatRelative } from 'date-fns'
+import { formatDistanceToNow } from 'date-fns'
 import { Depths } from '@uifabric/fluent-theme';
 
 export interface IContentProps {
@@ -25,7 +25,7 @@ export class ContentItem<IContentProps, IContentState> extends React.Component<I
     protected githubIcon: IIconProps = { iconName: 'github' };
     protected people: IDocumentCardActivityPerson[] = [{ name: 'ID devrel', profileImageSrc: '' }];
     protected icons: string[] = ["web"];
-    protected lastUpdatedDate: number = Date.now();
+    protected lastUpdatedDate: Date = new Date()
     public tags: string[] = [];
 
     protected logoProps: IDocumentCardLogoProps = {
@@ -44,14 +44,14 @@ export class ContentItem<IContentProps, IContentState> extends React.Component<I
 export class LinkContentItem extends ContentItem<IContentProps, IContentState> {
     public constructor(props: IContentProps, state: IContentState) {
         super(props, state);
-        if (this.props.people) {
+        if (this.props.people && this.props.people.length > 0) {
             this.people = this.props.people;
         }
         if (this.props.logoIconNames) {
             this.icons = this.props.logoIconNames;
         }
         if (this.props.lastUpdated) {
-            this.lastUpdatedDate = this.props.lastUpdated.getDate();
+            this.lastUpdatedDate = this.props.lastUpdated;
         }
     }
 
@@ -74,7 +74,7 @@ export class LinkContentItem extends ContentItem<IContentProps, IContentState> {
                     <DocumentCardTitle title={this.props.title} shouldTruncate />
                     <DocumentCardTitle title={this.props.subTitle ? this.props.subTitle : ""} showAsSecondaryTitle />
                 </div>
-                <DocumentCardActivity activity={"Last updated:" + formatRelative(this.lastUpdatedDate, new Date())} people={this.people} />
+                <DocumentCardActivity activity={"Last updated " + formatDistanceToNow(this.lastUpdatedDate) + " ago"} people={this.people} />
             </DocumentCard>
         );
     }
@@ -83,14 +83,14 @@ export class LinkContentItem extends ContentItem<IContentProps, IContentState> {
 export class MediaContentItem extends ContentItem<IMediaContentProps, IContentState> {
     public constructor(props: IMediaContentProps, state: IContentState) {
         super(props, state);
-        if (this.props.people) {
+        if (this.props.people && this.props.people.length > 0) {
             this.people = this.props.people;
         }
         if (this.props.logoIconNames) {
             this.icons = this.props.logoIconNames;
         }
         if (this.props.lastUpdated) {
-            this.lastUpdatedDate = this.props.lastUpdated.getDate();
+            this.lastUpdatedDate = this.props.lastUpdated
         }
     }
 
@@ -120,7 +120,7 @@ export class MediaContentItem extends ContentItem<IMediaContentProps, IContentSt
                     shouldTruncate={true}
                 />
                 <DocumentCardActivity
-                    activity={"Published on " + formatRelative(this.lastUpdatedDate, new Date())}
+                    activity={"Published " + formatDistanceToNow(this.lastUpdatedDate) + " ago"}
                     people={this.people}
                 />
             </DocumentCard>

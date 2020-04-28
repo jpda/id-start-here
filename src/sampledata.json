@@ -231,31 +231,34 @@
             },
             {
                 "item": "connect-to-api",
+                "text": "use API",
                 "tags": [
                     "build",
                     "web",
                     "dotnet"
                 ],
-                "icon": "DeveloperTools"
+                "icon": "AzureAPIManagement"
             },
             {
                 "item": "secure-api",
+                "text": "secure API",
                 "tags": [
                     "build",
                     "web",
                     "dotnet"
                 ],
-                "icon": "DeveloperTools"
+                "icon": "Lock"
             },
             {
                 "item": "connect-to-azure-resources",
+                "text": "use Azure",
                 "tags": [
                     "build",
                     "run",
                     "web",
                     "dotnet"
                 ],
-                "icon": "DeveloperTools"
+                "icon": "AzureLogo"
             },
             {
                 "item": "secure-creds",
@@ -403,6 +406,83 @@
                 "web",
                 "dotnet",
                 "add-auth"
+            ]
+        },
+        {
+            "href": "https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter?tabs=azure-cli",
+            "title": "Use Key Vault to pass secure parameter value during deployment",
+            "logoIconNames": [
+                "CloudUpload",
+                "container",
+                "bash"
+            ],
+            "lastUpdated": "2020-01-06",
+            "subTitle": "Instead of putting a secure value (like a password) directly in your template or parameter file, you can retrieve the value from an Azure Key Vault during a deployment. You retrieve the value by referencing the key vault and secret in your parameter file.",
+            "contentType": "link",
+            "contentSource": "docs",
+            "contentWeight": "official",
+            "tags": [
+                "deploy",
+                "container",
+                "bash",
+                "ARM",
+                "secure-creds"
+            ]
+        },
+        {
+            "href": "https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest",
+            "title": "Create an Azure service principal with the Azure CLI",
+            "logoIconNames": [
+                "CloudUpload",
+                "container",
+                "bash"
+            ],
+            "lastUpdated": "2019-02-15",
+            "subTitle": "Automated tools that use Azure services should always have restricted permissions. Instead of having applications sign in as a fully privileged user, Azure offers service principals.",
+            "contentType": "link",
+            "contentSource": "docs",
+            "contentWeight": "official",
+            "tags": [
+                "deploy",
+                "container",
+                "bash",
+                "ARM",
+                "secure-creds"
+            ]
+        },
+        {
+            "href": "https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create/",
+            "title": "Create an Azure Key Vault",
+            "logoIconNames": [
+                "Github"
+            ],
+            "lastUpdated": "2020-03-15",
+            "subTitle": "This template creates an Azure Key Vault and a secret stored inside the key vault. If you are new to Azure Key Vault.",
+            "contentType": "sample",
+            "contentSource": "github",
+            "contentWeight": "official",
+            "tags": [
+                "deploy",
+                "container",
+                "bash",
+                "ARM",
+                "secure-creds"
+            ]
+        },
+        {
+            "href": "https://www.youtube.com/watch?v=NUX0PInkq0Y",
+            "title": "How to use Azure Key Vault Secrets in an Azure Resource Manager Template",
+            "lastUpdated": "2019-05-24",
+            "previewImageHref": "https://i3.ytimg.com/vi/NUX0PInkq0Y/hqdefault.jpg",
+            "contentType": "media",
+            "contentSource": "youtube",
+            "contentWeight": "mvp",
+            "tags": [
+                "deploy",
+                "container",
+                "bash",
+                "ARM",
+                "secure-creds"
             ]
         }
     ]

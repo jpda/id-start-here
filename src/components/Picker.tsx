@@ -33,7 +33,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
         if (option) {
             var plat = this.metadataService.GetTaggedItems("verb", [option.key]);
             this.setState({
-                verb: option.key, platforms: plat, languages: [], tasks: [], platformOptions: [], taskOptions: []
+                verb: option.key, platforms: plat, languages: [], tasks: [], langOptions:[], platformOptions: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
             }, () => this.suggest());
             this.setState({
                 platformOptions: plat.map(x => {
@@ -47,7 +47,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
         if (option) {
             var lang = this.metadataService.GetTaggedItems("platform", [this.state.verb, option.key]);
             this.setState({
-                platform: option.key, languages: lang, tasks: [], taskOptions: []
+                platform: option.key, languages: lang, tasks: [], taskOptions: [], linkContent: [], mediaContent: [], sampleContent: []
             }, () => this.suggest());
             this.setState({
                 langOptions: lang.map(x => {

@@ -52,7 +52,6 @@ export default class BoxPicker extends Picker {
                         </Stack>
                         <Stack horizontalAlign="center" gap={15} hidden={!this.state.ready}>
                             <Text variant="xxLarge" styles={this.boldStyle} block>{this.state.sentence}</Text>
-                            <PrimaryButton iconProps={this.rocketIcon} href={this.state.suggestion} disabled={!this.state.ready}>Let's go</PrimaryButton>
                         </Stack>
                     </Stack>
                 </div>
