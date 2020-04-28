@@ -22,7 +22,10 @@ export class Picker extends React.Component<PickerProps, PickerState> {
             verbs: this.metadataService.GetRootItems(),
             verbOptions: this.metadataService.GetRootItems().map(x => {
                 return { key: x.item, text: x.text, iconProps: { iconName: x.icon } };
-            })
+            }),
+            linkContent: [],
+            sampleContent: [],
+            mediaContent: []
         };
         initializeIcons();
     }
@@ -70,6 +73,11 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     taskChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
             this.setState({ task: option.key }, () => this.suggest());
+            this.setState({
+                linkContent: this.metadataService.GetTaggedContent("link", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+                sampleContent: this.metadataService.GetTaggedContent("sample", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+                mediaContent: this.metadataService.GetTaggedContent("media", [this.state.verb, this.state.platform, this.state.lang, option.key]),
+            });
         }
     };
 
