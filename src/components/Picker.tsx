@@ -54,7 +54,7 @@ export class Picker extends React.Component<PickerProps, PickerState> {
     };
     langChange = (ev?: React.FormEvent<HTMLElement | HTMLInputElement>, option?: IChoiceGroupOption) => {
         if (option) {
-            var task = this.metadataService.GetTaggedItems("lang", [this.state.verb, this.state.platform, this.state.lang, option.key]);
+            var task = this.metadataService.GetTaggedItems("lang", [this.state.verb, this.state.platform, option.key]);
             this.setState({ lang: option.key }, () => this.suggest());
             this.setState({ tasks: task });
             this.setState({
