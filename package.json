@@ -11,7 +11,7 @@
     "@microsoft/applicationinsights-react-js": "^2.5.4",
     "@microsoft/applicationinsights-web": "^2.5.4",
     "@types/jest": "24.0.12",
-    "@types/node": "11.13.8",
+    "@types/node": "11.15.54",
     "@types/react": "16.8.15",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^5.1.4",
